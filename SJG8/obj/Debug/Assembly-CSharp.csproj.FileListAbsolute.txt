@@ -1,0 +1,2 @@
+E:\GIT\SGJ8-dx\SJG8\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+E:\GIT\SGJ8-dx\SJG8\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
