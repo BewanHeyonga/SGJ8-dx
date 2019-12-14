@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7040974363676319211}
   - component: {fileID: 7040974363676319204}
   - component: {fileID: 7040974363676319205}
+  - component: {fileID: 6670616880996459513}
   m_Layer: 0
   m_Name: TrueEnemy
   m_TagString: true
@@ -93,6 +94,24 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6670616880996459513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7040974363676319206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164f1c1945776d2488a31175e79d5023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 1
+  bullet: {fileID: 653690616659596219, guid: 8abf11c29bf06d341ac8ed55f3111c3f, type: 3}
+  dieGo: {fileID: 6642923882227110389, guid: 216ac6fb23e0f1342b94bd21b2b8895d, type: 3}
+  bulletDir: 1
+  bulletSpeed: 2000
+  isDie: 0
 --- !u!1 &7040974364681196421
 GameObject:
   m_ObjectHideFlags: 0
