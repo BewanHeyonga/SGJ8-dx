@@ -34,7 +34,7 @@ public class Player :Character
 
     public override void Born()
     {
-        base.Born(); print("Player Born");
+
     }
 
     public override void Die()

@@ -136,6 +136,7 @@
     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCInput.cs" />
     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCJoystick.cs" />
     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCTouchPad.cs" />
+    <Compile Include="Assets\Effect.cs" />
     <Compile Include="Assets\Scripts\Base\Singleton.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy.cs" />
@@ -145,7 +146,6 @@
     <Compile Include="Assets\Scripts\CTRL\GameController.cs" />
     <Compile Include="Assets\Scripts\CTRL\GlobalManager.cs" />
     <Compile Include="Assets\Scripts\CTRL\JoystickController.cs" />
-    <Compile Include="Assets\Scripts\CTRL\UIManager.cs" />
     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
     <Compile Include="Assets\Scripts\Levels.cs" />
     <Compile Include="Assets\Scripts\MMMaths.cs" />

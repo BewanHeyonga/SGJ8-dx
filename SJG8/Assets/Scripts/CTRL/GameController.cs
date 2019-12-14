@@ -5,40 +5,63 @@ using UnityEngine.UI;
 
 public class GameController :MonoBehaviour
 {
-  //是否清理完毕
-    [HideInInspector]
-    public bool isClear;
-    //是否失败
-    [HideInInspector]
-    public bool isLose;
-    //是否暂停
-    [HideInInspector]
-    public bool isPause;
 
+    public Level levelFile;
     [HideInInspector]
-    public  int CurrScore;
+    private EnemyManager enemyManager;
+  
 
-    private CanvasGroup PausePanel;
-
-    private GameObject PauseButton;
-
-    [HideInInspector]
-    public AudioManger audioManger;
-
-    [HideInInspector]
-    public AudioSource BGM;
-
-    // Start is called before the first frame update
+    private float deltaTime=1f;
+    public int currWaveNum=0;
+    
+    public Text progressText;
+    #region Singleton
+    private static GameController instance;
+    public static GameController Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameController();
+            }
+            return instance;
+        }
+    }
+    #endregion
     private void Awake()
     {
-        audioManger = AudioManger.Instance;
+        instance = this;
+        enemyManager = EnemyManager.Instance;
     }
-
     void Start()
     {
-     
+        
+        StartCoroutine("StartGame");
     }
-    
+
+    IEnumerator StartGame()
+    {
+
+        yield return new WaitForSeconds(1f);
+        enemyManager.Spawn(0);
+    }
+    public void GoNextWave()
+    {
+        StartCoroutine(NextWave());
+    }
+    IEnumerator NextWave()
+    {
+        yield return new WaitForSeconds(deltaTime);
+        if (currWaveNum < levelFile.waves.Count-1)
+        {
+            print(currWaveNum + "currWaveNum," + levelFile.waves.Count + "levelFile.waves.Count");
+            enemyManager.Enemies = enemyManager.spawnCtrl.Spawn(++currWaveNum);
+            progressText.text = string.Format("Progress:{0}/{1}", (currWaveNum + 1), (levelFile.waves.Count));
+        }
+        else
+        { print("Clear"); }
+    }
     // 胜利，结算功能TODO
     public void Win()
     {
@@ -59,5 +82,5 @@ public class GameController :MonoBehaviour
     {
         yield return null;
     }
-   
+
 }

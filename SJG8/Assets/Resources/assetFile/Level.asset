@@ -31,40 +31,73 @@ MonoBehaviour:
       bornPoint: {x: 0, y: 1}
     - type: 1
       bornPoint: {x: 0, y: 0}
-    - type: 1
-      bornPoint: {x: 0, y: 4}
-    - type: 1
-      bornPoint: {x: 4, y: 0}
-  - enemyData: []
   - enemyData:
     - type: 0
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
       bornPoint: {x: 0, y: 0}
+  - enemyData:
     - type: 0
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
       bornPoint: {x: 0, y: 0}
+  - enemyData:
     - type: 0
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
       bornPoint: {x: 0, y: 0}
+  - enemyData:
     - type: 0
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
       bornPoint: {x: 0, y: 0}
+  - enemyData:
     - type: 0
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
       bornPoint: {x: 0, y: 0}
+  - enemyData:
     - type: 0
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
       bornPoint: {x: 0, y: 0}
+  - enemyData:
     - type: 0
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
       bornPoint: {x: 0, y: 0}
+  - enemyData:
     - type: 0
-      bornPoint: {x: 0, y: 0}
-    - type: 0
-      bornPoint: {x: 0, y: 0}
-    - type: 0
-      bornPoint: {x: 0, y: 0}
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
-  - enemyData: []
+      bornPoint: {x: 1, y: 1}
+    - type: 1
+      bornPoint: {x: 0, y: 1}
+    - type: 1
+      bornPoint: {x: 1, y: 2}
+    - type: 1
+      bornPoint: {x: 1, y: 0}
+    - type: 1
+      bornPoint: {x: 2, y: 2}
+    - type: 1
+      bornPoint: {x: 2, y: 3}
+    - type: 1
+      bornPoint: {x: 3, y: 2}
+    - type: 1
+      bornPoint: {x: 4, y: 4}
+    - type: 1
+      bornPoint: {x: 3, y: 5}
+    - type: 1
+      bornPoint: {x: 5, y: 5}

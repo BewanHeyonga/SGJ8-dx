@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
+    private GameController ctrl;
     public float step=6;
     public GameObject trueGameObj;
     public GameObject falseGameObj;
     public Transform originTrans;
-    public Level level;
+    
 
     private List<Enemy> enemyList;
     private Vector3 ori;
@@ -16,6 +17,7 @@ public class EnemySpawn : MonoBehaviour
     private void Awake()
     {
         ori = originTrans.position;
+        ctrl = GameController.Instance;
     }
 
     public List<Enemy> Spawn(int wavaIndex)
@@ -30,7 +32,7 @@ public class EnemySpawn : MonoBehaviour
         }
 
         enemyList = new List<Enemy>();
-        var wava = level.waves[wavaIndex].enemyData;
+        var wava =ctrl.levelFile.waves[wavaIndex].enemyData;
         foreach (var data in wava)
         {
             switch (data.type)

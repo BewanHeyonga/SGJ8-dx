@@ -39,11 +39,10 @@ public class Enemy :Character
 
     public override void Die()
     {
-        print("Enemy Die");
         isDie = true;
         col.enabled = false;
-        GameObject die = Instantiate(dieGo);
-        print("Enemy Die");
+        Instantiate(dieGo,transform.position,Quaternion.identity);
+        print("Kill");
         Destroy(this.gameObject,0.02f);
 
     }

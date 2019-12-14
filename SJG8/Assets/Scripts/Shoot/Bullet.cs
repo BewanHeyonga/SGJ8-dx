@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    EnemyManager enemyManager;
 
+    private void Awake()
+    {
+        enemyManager = EnemyManager.Instance;
+
+    }
     private void OnTriggerEnter(Collider other)
     {
             if (other.tag == "true")
             {
-                HitTureEmpty();
+            print("True");
+            enemyManager.Die();
+            HitTureEmpty();
             }
             if (other.tag == "false")
             {
@@ -25,7 +33,6 @@ public class Bullet : MonoBehaviour
     //打中真实的
     void HitTureEmpty()
     {
-        EnemyManager.Instance.Die();
         Destroy(this.gameObject);
     }
     //打中假的了

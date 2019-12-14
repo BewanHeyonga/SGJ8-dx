@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager:MonoBehaviour
 {
     #region Singleton
     private static EnemyManager instance;
@@ -17,26 +17,34 @@ public class EnemyManager : MonoBehaviour
             return instance;
         }
     }
+
+    private void Awake()
+    {
+        instance = this;
+    }
     #endregion
+
+    private GameController ctrl;
     [HideInInspector]
-    public List<Enemy> Enemies;
-    [HideInInspector]
+    public List<Enemy> Enemies=new List<Enemy>();
+
     public EnemySpawn spawnCtrl;
-    private void Start()
+   
+    public void Spawn(int num)
     {
         spawnCtrl = GameObject.Find("EnemySpawn").GetComponent<EnemySpawn>();
-        Enemies=spawnCtrl.Spawn(0);if(Enemies==null)
-        { print("Enemise ERROR"); }
-
+      
+        Enemies= spawnCtrl.Spawn(num);
     }
- 
     public void Die()
     {
-       //this The Enemies is Null，I don't Delete enemy In Here.
-       
-        foreach (Enemy enemy in Enemies)
+        ctrl = GameController.Instance;
+        for (int i = 0; i< Enemies.Count;i++)
         {
-            Destroy(enemy.gameObject);
+            Enemies[i].Die();
         }
+
+        ctrl.GoNextWave();
+
     }
 }

@@ -28,7 +28,7 @@ public class JoystickController : MonoBehaviour
     {
         m_playerTrans = GameObject.Find("Player").transform;
         m_position = m_playerTrans.position;
-        m_state = MoveState.Mid; print(m_state);
+        m_state = MoveState.Mid; 
         m_joystick.OnPressLeft.AddListener(MoveLeft);
         m_joystick.OnPressRight.AddListener(MoveRight);
     }
@@ -65,7 +65,7 @@ public class JoystickController : MonoBehaviour
         if (m_state == MoveState.Right) { return; }
         if (m_isMove)
         {
-            m_state += 1; print(m_state);
+            m_state += 1; 
             m_position += m_offset;
             m_playerTrans.position = m_position;
             m_isMove = false;

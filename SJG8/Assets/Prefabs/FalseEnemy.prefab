@@ -214,7 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 1
-  bullet: {fileID: 653690616659596219, guid: b3dcb875f7c6f7645b80b9dc23537b36, type: 3}
+  bullet: {fileID: 653690616659596219, guid: 8abf11c29bf06d341ac8ed55f3111c3f, type: 3}
+  dieGo: {fileID: 6642923882227110389, guid: 216ac6fb23e0f1342b94bd21b2b8895d, type: 3}
   bulletDir: 1
   bulletSpeed: 2000
   isDie: 0
