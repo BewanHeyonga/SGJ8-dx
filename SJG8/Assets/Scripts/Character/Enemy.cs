@@ -40,7 +40,7 @@ public class Enemy :Character
     public override void Die()
     {
         isDie = true;
-        col.enabled = false;
+        //col.enabled = false;
         Instantiate(dieGo,transform.position,Quaternion.identity);
         print("Kill");
         Destroy(this.gameObject,0.02f);

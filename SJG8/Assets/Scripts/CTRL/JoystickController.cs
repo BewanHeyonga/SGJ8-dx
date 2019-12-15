@@ -20,10 +20,10 @@ public class JoystickController : MonoBehaviour
 
     private bool m_isMove = true;
     private bool m_isRecovery = false;
-
+    public Player playerObject;
     [SerializeField]
     private ETCJoystick m_joystick;//虚拟摇杆
-
+    private KeyCode mykey;
     private void Start()
     {
         m_playerTrans = GameObject.Find("Player").transform;
@@ -33,8 +33,35 @@ public class JoystickController : MonoBehaviour
         m_joystick.OnPressRight.AddListener(MoveRight);
     }
 
+    
+    public void MoveFormNum(int num)
+    {
+        var step = num - m_state;
+        if (num < 0 || (int)num > 4)
+        { return; }
+        m_state = (MoveState)num;
+        print(m_state + "M_state");
+        print(step + "Step");
+        m_position += m_offset * ((int)step % 5);
+        m_playerTrans.position = m_position;
+        playerObject.Shoot();
+    }
+    public void MoveToTarget(MoveState state)
+    {
+        //abs?
+        var step =state-m_state;
+        if (state < 0 || (int)state > 4)
+        { return; }
+        m_state = state;
+        print(m_state+"M_state");
+        print(step + "Step");
+        m_position += m_offset * (step % 5);
+        m_playerTrans.position = m_position;
+        playerObject.Shoot();
+    }
     private void Update()
     {
+ 
         if (Input.GetKeyDown(KeyCode.A))
         {
             MoveLeft();
@@ -42,6 +69,37 @@ public class JoystickController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             MoveRight();
+        }
+        InputNumToMove();
+
+
+
+    }
+    public void InputNumToMove()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            MoveFormNum(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            MoveFormNum(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            MoveFormNum(2);
+        }
+    
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            MoveFormNum(3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            MoveFormNum(4);
         }
     }
     public void MoveLeft()

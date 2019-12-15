@@ -7,6 +7,8 @@ TagManager:
   - soldier
   - true
   - false
+  - left
+  - right
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 1518323995
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

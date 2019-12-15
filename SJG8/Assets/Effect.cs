@@ -6,6 +6,6 @@ public class Effect : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(this.gameObject,2f);
+        Destroy(this.gameObject,1f);
     }
 }

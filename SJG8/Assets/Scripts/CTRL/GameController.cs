@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameController :MonoBehaviour
 {
+    public bool isDie;
 
     public Level levelFile;
     [HideInInspector]
